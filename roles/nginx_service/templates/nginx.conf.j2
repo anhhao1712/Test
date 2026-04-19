@@ -6,7 +6,7 @@ server {
     error_log  /var/log/nginx/error.log;
 
     location / {
-        proxy_pass         http://{{ ansible_host }}:{{ webapp_host_port }};
+        proxy_pass         http://172.17.0.2:{{ webapp_host_port }};
         proxy_http_version 1.1;
         proxy_set_header   Host             $host;
         proxy_set_header   X-Real-IP        $remote_addr;
